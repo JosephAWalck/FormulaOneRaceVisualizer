@@ -1,9 +1,9 @@
 ﻿using FormulaOneRaceVisualizer.Models.LapModels;
 using Newtonsoft.Json;
 
-namespace FormulaOneRaceVisualizer.Models.RaceModels
+namespace FormulaOneRaceVisualizer.Models
 {
-    public class RaceMRData
+    public class MRData
     {
         [JsonProperty("RaceTable")]
         public RaceTable RaceTable { get; set; } = new RaceTable();

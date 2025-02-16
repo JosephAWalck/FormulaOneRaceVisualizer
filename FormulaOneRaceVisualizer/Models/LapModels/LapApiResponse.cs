@@ -5,6 +5,6 @@ namespace FormulaOneRaceVisualizer.Models.LapModels
     public class LapApiResponse
     {
         [JsonProperty("MRData")]
-        public LapMRData MRData { get; set; } = new LapMRData();
+        public MRData MRData { get; set; } = new MRData();
     }
 }

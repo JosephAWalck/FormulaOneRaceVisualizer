@@ -1,6 +1,7 @@
-﻿using Newtonsoft.Json;
+﻿using FormulaOneRaceVisualizer.Models.RaceModels;
+using Newtonsoft.Json;
 
-namespace FormulaOneRaceVisualizer.Models.RaceModels
+namespace FormulaOneRaceVisualizer.Models
 {
     public class RaceTable
     {

@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using FormulaOneRaceVisualizer.Models.LapModels;
+using Newtonsoft.Json;
 
 namespace FormulaOneRaceVisualizer.Models.RaceModels
 {
@@ -18,5 +19,7 @@ namespace FormulaOneRaceVisualizer.Models.RaceModels
 
         [JsonProperty("Results")]
         public List<RaceResult> Results { get; set; } = [];
+
+        public List<Lap> Laps { get; set; } = [];
     }
 }

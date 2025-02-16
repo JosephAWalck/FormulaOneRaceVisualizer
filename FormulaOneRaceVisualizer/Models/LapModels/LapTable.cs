@@ -12,6 +12,6 @@ namespace FormulaOneRaceVisualizer.Models.LapModels
         public string Round { get; set; } = string.Empty;
 
         [JsonProperty("Races")]
-        public List<RaceByLaps> Race { get; set; } = new List<RaceByLaps>();
+        public List<Race> Race { get; set; } = new List<Race>();
     }
 }

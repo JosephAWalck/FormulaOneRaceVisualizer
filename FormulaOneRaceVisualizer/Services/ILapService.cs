@@ -1,9 +1,9 @@
-﻿using FormulaOneRaceVisualizer.Models.LapModels;
+﻿using FormulaOneRaceVisualizer.Models.DTOs;
 
 namespace FormulaOneRaceVisualizer.Services
 {
     public interface ILapService
     {
-        Task<LapApiResponse> GetLapDataAsync(int season, int round, int lap);
+        Task<LapDTO> GetLapDataAsync(int season, int round, int lap);
     }
 }

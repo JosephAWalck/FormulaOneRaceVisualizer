@@ -1,9 +1,10 @@
-﻿using FormulaOneRaceVisualizer.Models.RaceModels;
+﻿using FormulaOneRaceVisualizer.Models.DTOs;
+using FormulaOneRaceVisualizer.Models.RaceModels;
 
 namespace FormulaOneRaceVisualizer.Services
 {
     public interface IRaceService
     {
-        Task<RaceApiResponse> GetRaceResultsAsync(int season, int round);
+        Task<RaceDTO> GetRaceResultsAsync(int season, int round);
     }
 }
