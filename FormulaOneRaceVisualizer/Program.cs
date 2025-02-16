@@ -9,6 +9,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IRaceService, RaceService>();
+builder.Services.AddScoped<ILapService, LapService>();
 builder.Services.AddHttpClient();
 
 var app = builder.Build();

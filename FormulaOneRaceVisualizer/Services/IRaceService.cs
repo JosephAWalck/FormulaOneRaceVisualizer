@@ -1,4 +1,4 @@
-﻿using FormulaOneRaceVisualizer.Models;
+﻿using FormulaOneRaceVisualizer.Models.RaceModels;
 
 namespace FormulaOneRaceVisualizer.Services
 {

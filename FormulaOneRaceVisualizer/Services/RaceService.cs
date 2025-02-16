@@ -1,4 +1,4 @@
-﻿using FormulaOneRaceVisualizer.Models;
+﻿using FormulaOneRaceVisualizer.Models.RaceModels;
 using Newtonsoft.Json;
 using System.Text.Json;
 using System.Text.Json.Serialization;

@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace FormulaOneRaceVisualizer.Models
+namespace FormulaOneRaceVisualizer.Models.RaceModels
 {
     public class Race
     {
@@ -17,6 +17,6 @@ namespace FormulaOneRaceVisualizer.Models
         public string Time { get; set; } = string.Empty;
 
         [JsonProperty("Results")]
-        public List<Result> Results { get; set; } = [];
+        public List<RaceResult> Results { get; set; } = [];
     }
 }
