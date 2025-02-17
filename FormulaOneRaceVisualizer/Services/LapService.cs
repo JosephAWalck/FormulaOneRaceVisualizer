@@ -1,4 +1,5 @@
-﻿using FormulaOneRaceVisualizer.Models.DTOs;
+﻿using FormulaOneRaceVisualizer.Models;
+using FormulaOneRaceVisualizer.Models.DTOs;
 using FormulaOneRaceVisualizer.Models.LapModels;
 using Newtonsoft.Json;
 
@@ -17,7 +18,7 @@ namespace FormulaOneRaceVisualizer.Services
         {
             string url = $"https://ergast.com/api/f1/{season}/{round}/laps/{lap}.json";
             var response = await _httpClient.GetStringAsync(url);
-            var lapData = JsonConvert.DeserializeObject<LapApiResponse>(response);
+            var lapData = JsonConvert.DeserializeObject<ApiResponse>(response);
             var race = lapData.MRData.RaceTable.Races.FirstOrDefault();
             if (race == null) return null;
             return new LapDTO

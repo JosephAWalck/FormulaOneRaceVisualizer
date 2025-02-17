@@ -1,4 +1,5 @@
 ﻿using FormulaOneRaceVisualizer.Models.LapModels;
+using FormulaOneRaceVisualizer.Models.SeasonModels;
 using Newtonsoft.Json;
 
 namespace FormulaOneRaceVisualizer.Models
@@ -7,5 +8,8 @@ namespace FormulaOneRaceVisualizer.Models
     {
         [JsonProperty("RaceTable")]
         public RaceTable RaceTable { get; set; } = new RaceTable();
+
+        [JsonProperty("SeasonTable")]
+        public SeasonTable SeasonTable { get; set; } = new SeasonTable();
     }
 }
