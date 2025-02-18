@@ -4,6 +4,9 @@ namespace FormulaOneRaceVisualizer.Models
 {
     public class Driver
     {
+        [JsonProperty("driverId")]
+        public string DriverId { get; set; } = string.Empty;
+
         [JsonProperty("code")]
         public string Code { get; set; } = string.Empty;
 

@@ -1,4 +1,5 @@
-﻿using FormulaOneRaceVisualizer.Models.LapModels;
+﻿using FormulaOneRaceVisualizer.Models.DriverModels;
+using FormulaOneRaceVisualizer.Models.LapModels;
 using FormulaOneRaceVisualizer.Models.SeasonModels;
 using Newtonsoft.Json;
 
@@ -11,5 +12,8 @@ namespace FormulaOneRaceVisualizer.Models
 
         [JsonProperty("SeasonTable")]
         public SeasonTable SeasonTable { get; set; } = new SeasonTable();
+
+        [JsonProperty("DriverTable")]
+        public DriverTable DriverTable { get; set; } = new DriverTable();
     }
 }
