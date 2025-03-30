@@ -1,9 +1,9 @@
-﻿using FormulaOneRaceVisualizer.Models.DTOs;
+﻿using FormulaOneRaceVisualizer.Models.ResponseModels;
 
 namespace FormulaOneRaceVisualizer.Services
 {
     public interface ISeasonService
     {
-        Task<SeasonDTO> GetSeasonsAsync();
+        Task<SeasonsResponse> GetSeasonsAsync();
     }
 }

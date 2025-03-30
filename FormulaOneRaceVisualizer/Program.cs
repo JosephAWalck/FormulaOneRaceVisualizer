@@ -18,10 +18,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 // Service DI
-builder.Services.AddScoped<IRaceService, RaceService>();
-builder.Services.AddScoped<ILapService, LapService>();
 builder.Services.AddScoped<ISeasonService, SeasonService>();
-builder.Services.AddScoped<IDriverService, DriverService>();
+builder.Services.AddScoped<IRacesService, RacesService>();
 builder.Services.AddHttpClient();
 
 var app = builder.Build();

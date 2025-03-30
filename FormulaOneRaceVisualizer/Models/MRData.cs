@@ -1,5 +1,4 @@
-﻿using FormulaOneRaceVisualizer.Models.DriverModels;
-using FormulaOneRaceVisualizer.Models.LapModels;
+﻿using FormulaOneRaceVisualizer.Models.RaceModels;
 using FormulaOneRaceVisualizer.Models.SeasonModels;
 using Newtonsoft.Json;
 
@@ -7,13 +6,10 @@ namespace FormulaOneRaceVisualizer.Models
 {
     public class MRData
     {
-        [JsonProperty("RaceTable")]
-        public RaceTable RaceTable { get; set; } = new RaceTable();
-
         [JsonProperty("SeasonTable")]
         public SeasonTable SeasonTable { get; set; } = new SeasonTable();
 
-        [JsonProperty("DriverTable")]
-        public DriverTable DriverTable { get; set; } = new DriverTable();
+        [JsonProperty("RaceTable")]
+        public RaceTable RacesTable { get; set; } = new RaceTable();
     }
 }

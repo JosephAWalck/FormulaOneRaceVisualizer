@@ -1,35 +1,23 @@
 ﻿using FormulaOneRaceVisualizer.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FormulaOneRaceVisualizer.Controllers
 {
-    [Route("api")]
-    [ApiController]
-    public class RacesController : ControllerBase
+    public class RacesController : Controller
     {
-        private readonly IRaceService _raceService;
+        private readonly IRacesService _racesService;
 
-        public RacesController(IRaceService raceService)
+        public RacesController(IRacesService racesService)
         {
-            _raceService = raceService;
+            _racesService = racesService;
         }
 
-        [HttpGet("{season}/races")]
-        public async Task<IActionResult> GetRaceScedule(int season)
+        [HttpGet("/races/{season}")]
+        public async Task<IActionResult> GetRacesListData(int season)
         {
-            var result = await _raceService.GetSeasonRaces(season);
-            if (result == null || result.Count == 0) return NotFound();
+            var result = await _racesService.GetRaceListForSeasonAsync(season);
+            if (result.Races.Count == 0) return NotFound();
             return Ok(result);
-        }
-
-        [HttpGet("{season}/{round}")]
-        public async Task<IActionResult> GetRaceResults(int season, int round)
-        {
-            var result = await _raceService.GetRaceResultsAsync(season, round);
-            if (result == null) return NotFound();
-            return Ok(result);
-
         }
     }
 }
