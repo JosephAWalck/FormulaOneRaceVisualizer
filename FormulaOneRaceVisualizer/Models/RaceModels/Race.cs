@@ -5,6 +5,9 @@ namespace FormulaOneRaceVisualizer.Models.RaceModels
 {
     public class Race
     {
+        [JsonProperty("round")]
+        public string Round { get; set; } = string.Empty;
+
         [JsonProperty("raceName")]
         public string RaceName { get; set; } = string.Empty;
 

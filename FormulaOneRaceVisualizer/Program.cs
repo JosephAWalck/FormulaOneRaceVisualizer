@@ -1,9 +1,18 @@
+using FormulaOneRaceVisualizer.Configs;
 using FormulaOneRaceVisualizer.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+var jolpicaBaseUrl = builder.Configuration["JolpicaApi:BaseUrl"]
+    ?? Environment.GetEnvironmentVariable("JolpicaApiBaseUrl");
 
+// Bind env var
+builder.Services.Configure<ExternalApiOptions>(options =>
+{
+    options.JolpicaApiBaseUrl = jolpicaBaseUrl;
+});
+
+// Add services to the container.
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

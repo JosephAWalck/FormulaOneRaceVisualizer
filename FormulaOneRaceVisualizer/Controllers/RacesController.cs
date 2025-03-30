@@ -4,15 +4,23 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FormulaOneRaceVisualizer.Controllers
 {
-    [Route("api/races")]
+    [Route("api")]
     [ApiController]
     public class RacesController : ControllerBase
     {
         private readonly IRaceService _raceService;
 
-        public RacesController(IRaceService raceSeervice)
+        public RacesController(IRaceService raceService)
         {
-            _raceService = raceSeervice;
+            _raceService = raceService;
+        }
+
+        [HttpGet("{season}/races")]
+        public async Task<IActionResult> GetRaceScedule(int season)
+        {
+            var result = await _raceService.GetSeasonRaces(season);
+            if (result == null || result.Count == 0) return NotFound();
+            return Ok(result);
         }
 
         [HttpGet("{season}/{round}")]
