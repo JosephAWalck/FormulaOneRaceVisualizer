@@ -5,15 +5,15 @@ namespace FormulaOneRaceVisualizer.Models
     public class Location
     {
         [JsonProperty("lat")]
-        public float latitude { get; set; }
+        public float Latitude { get; set; }
 
         [JsonProperty("long")]
-        public float longitude { get; set; }
+        public float Longitude { get; set; }
 
         [JsonProperty("locality")]
-        public string locality { get; set; } = string.Empty;
+        public string Locality { get; set; } = string.Empty;
 
         [JsonProperty("country")]
-        public string country { get; set; } = string.Empty;
+        public string Country { get; set; } = string.Empty;
     }
 }

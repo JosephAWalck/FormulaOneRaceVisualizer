@@ -24,7 +24,7 @@ namespace FormulaOneRaceVisualizer.Services
             var raceListResponse = new RaceListResponse();
             foreach(var race in raceListData.MRData.RacesTable.Races)
             {
-                raceListResponse.Races.Add(race.Circuit.Location.country);
+                raceListResponse.Races.Add(race.Circuit.Location.Country);
             }
             return raceListResponse;
         }
@@ -39,7 +39,7 @@ namespace FormulaOneRaceVisualizer.Services
                 raceResultsOverviewResponse.RaceResultsOverview.Add(
                     new RaceResultsOverview
                     {
-                        GrandPrix = race.Circuit.CircuitName,
+                        GrandPrix = race.Circuit.Location.Country,
                         Date = race.Date,
                         Winner = race.Results[0].Driver.GivenName + " " + race.Results[0].Driver.FamilyName,
                         Car = race.Results[0].Constructor.Name,
