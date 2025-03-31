@@ -13,7 +13,14 @@ namespace FormulaOneRaceVisualizer.Models.RaceModels
         [JsonProperty("Circuit")]
         public Circuit Circuit { get; set; } = new Circuit();
 
-        // insert schedule data here
+        [JsonProperty("date")]
+        public string Date { get; set; } = string.Empty;
+
+        [JsonProperty("time")]
+        public string Time { get; set; } = string.Empty;
+
+        [JsonProperty("Results")]
+        public List<GridResult> Results { get; set; } = new List<GridResult>();
         
     }
 }

@@ -1,5 +1,6 @@
 ﻿using FormulaOneRaceVisualizer.Configs;
 using FormulaOneRaceVisualizer.Models;
+using FormulaOneRaceVisualizer.Models.RaceModels;
 using FormulaOneRaceVisualizer.Models.ResponseModels;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
@@ -26,6 +27,29 @@ namespace FormulaOneRaceVisualizer.Services
                 raceListResponse.Races.Add(race.Circuit.Location.country);
             }
             return raceListResponse;
+        }
+
+        public async Task<RaceResultOverviewResponse> GetRaceResultsOverviewAsync(int seasonId)
+        {
+            var response = await _httpClient.GetStringAsync($"{seasonId}/results/1");
+            var resultsOverviewData = JsonConvert.DeserializeObject<ApiResponse>(response);
+            var raceResultsOverviewResponse = new RaceResultOverviewResponse();
+            foreach(var race in resultsOverviewData.MRData.RacesTable.Races)
+            {
+                raceResultsOverviewResponse.RaceResultsOverview.Add(
+                    new RaceResultsOverview
+                    {
+                        GrandPrix = race.Circuit.CircuitName,
+                        Date = race.Date,
+                        Winner = race.Results[0].Driver.GivenName + " " + race.Results[0].Driver.FamilyName,
+                        Car = race.Results[0].Constructor.Name,
+                        Laps = race.Results[0].Laps,
+                        Time = race.Results[0].Time.Time,
+                    });
+            }
+            return raceResultsOverviewResponse;
+            // "{season}/results/1" -> all races w/ race leader as result
+            // "{season}/{round}/results" -> gives all finished places for specific race
         }
     }
     
