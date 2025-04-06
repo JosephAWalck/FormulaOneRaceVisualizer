@@ -12,7 +12,7 @@ namespace FormulaOneRaceVisualizer.Models.RaceModels
         public int Position { get; set; }
 
         [JsonProperty("points")]
-        public int position { get; set; }
+        public int Points { get; set; }
 
         [JsonProperty("Driver")]
         public Driver Driver { get; set; } = new Driver();

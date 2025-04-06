@@ -48,8 +48,27 @@ namespace FormulaOneRaceVisualizer.Services
                     });
             }
             return raceResultsOverviewResponse;
-            // "{season}/results/1" -> all races w/ race leader as result
-            // "{season}/{round}/results" -> gives all finished places for specific race
+        }
+
+        public async Task<RaceResultsResponse> GetRaceResultsAsync(int seasonId, int round)
+        {
+            var response = await _httpClient.GetStringAsync($"{seasonId}/{round}/results");
+            var raceResultsData = JsonConvert.DeserializeObject<ApiResponse>(response);
+            var raceResultsResponse = new RaceResultsResponse();
+            foreach(var result in raceResultsData.MRData.RacesTable.Races[0].Results)
+            {
+                raceResultsResponse.RaceResults.Add(
+                    new RaceResult
+                    {
+                        Position = result.Position,
+                        Number = result.Number,
+                        Driver = result.Driver.GivenName + " " + result.Driver.FamilyName,
+                        Constructor = result.Constructor.Name,
+                        Laps = result.Laps,
+                        Time = result.Time.Time,
+                    });
+            }
+            return raceResultsResponse;
         }
     }
     

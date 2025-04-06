@@ -27,5 +27,13 @@ namespace FormulaOneRaceVisualizer.Controllers
             if (result.RaceResultsOverview.Count == 0) return NotFound();
             return Ok(result);
         }
+
+        [HttpGet("/{season}/races/{round}")]
+        public async Task<IActionResult> GetRaceResultsData(int season, int round)
+        {
+            var result = await _racesService.GetRaceResultsAsync(season, round);
+            if (result.RaceResults.Count == 0) return NotFound();
+            return Ok(result);
+        }
     }
 }

@@ -8,7 +8,7 @@ namespace FormulaOneRaceVisualizer.Services
     {
         Task<RaceListResponse> GetRaceListForSeasonAsync(int seasonId);
         Task<RaceResultOverviewResponse> GetRaceResultsOverviewAsync(int season);
-        // Task<RacesOverviewForSeason> GetRacesOverviewForSeason(int seasonId);
-        // Task<RaceResults> GetRaceResults(int seasonId, int round);
+
+        Task<RaceResultsResponse> GetRaceResultsAsync(int seasonId, int round);
     }
 }
