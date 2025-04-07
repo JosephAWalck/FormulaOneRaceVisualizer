@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace FormulaOneRaceVisualizer.Models
+namespace FormulaOneRaceVisualizer.Models.DriverModels
 {
     public class Driver
     {
@@ -18,6 +18,6 @@ namespace FormulaOneRaceVisualizer.Models
 
         [JsonProperty("nationality")]
         public string Nationality { get; set; } = string.Empty;
-        
+
     }
 }

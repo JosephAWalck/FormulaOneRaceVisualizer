@@ -11,5 +11,8 @@ namespace FormulaOneRaceVisualizer.Models
 
         [JsonProperty("RaceTable")]
         public RaceTable RacesTable { get; set; } = new RaceTable();
+
+        [JsonProperty("StandingsTable")]
+        public StandingsTable StandingsTable { get; set; } = new StandingsTable();
     }
 }

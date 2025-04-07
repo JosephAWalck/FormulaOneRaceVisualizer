@@ -20,6 +20,7 @@ builder.Services.AddSwaggerGen();
 // Service DI
 builder.Services.AddScoped<ISeasonService, SeasonService>();
 builder.Services.AddScoped<IRacesService, RacesService>();
+builder.Services.AddScoped<IDriversService, DriversService>();
 builder.Services.AddHttpClient();
 
 var app = builder.Build();

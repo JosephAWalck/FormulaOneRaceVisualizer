@@ -1,4 +1,5 @@
 ﻿using FormulaOneRaceVisualizer.Models.ConstructorModels;
+using FormulaOneRaceVisualizer.Models.DriverModels;
 using Newtonsoft.Json;
 
 namespace FormulaOneRaceVisualizer.Models.RaceModels
