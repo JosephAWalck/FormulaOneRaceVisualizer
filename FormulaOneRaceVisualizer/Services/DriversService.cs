@@ -38,5 +38,27 @@ namespace FormulaOneRaceVisualizer.Services
             return driversStandingsResponse;
 
         }
+
+        public async Task<DriverResultsResponse> GetDriverResultsDataAsync(int seasonId, string driverId)
+        {
+            var response = await _httpClient.GetStringAsync($"{seasonId}/drivers/{driverId}/results");
+            var driverResultsData = JsonConvert.DeserializeObject<ApiResponse>(response);
+            var driverResultsResponse = new DriverResultsResponse();
+            foreach(var result in driverResultsData.MRData.RacesTable.Races)
+            {
+                var raceResult = result.Results[0];
+                driverResultsResponse.Results.Add(
+                    new DriverResult
+                    {
+                        GrandPrix = result.Circuit.Location.Country,
+                        Date = result.Date,
+                        ConstructorName = raceResult.Constructor.Name,
+                        Position = raceResult.Position,
+                        Points = raceResult.Points
+                    });
+            }
+            driverResultsResponse.Results.Reverse();
+            return driverResultsResponse;
+        }
     }
 }

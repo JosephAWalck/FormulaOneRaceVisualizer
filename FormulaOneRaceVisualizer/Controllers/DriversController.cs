@@ -20,5 +20,12 @@ namespace FormulaOneRaceVisualizer.Controllers
             return Ok(result);
         }
 
+        [HttpGet("/{season}/drivers/{driverId}")]
+        public async Task<IActionResult> GetDriverResultsData(int season, string driverId)
+        {
+            var result = await _driversService.GetDriverResultsDataAsync(season, driverId);
+            if (result.Results.Count == 0) return NotFound();
+            return Ok(result);
+        }
     }
 }

@@ -1,6 +1,1 @@
 @FormulaOneRaceVisualizer_HostAddress = http://localhost:5258
-
-GET {{FormulaOneRaceVisualizer_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
