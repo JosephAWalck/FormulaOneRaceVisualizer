@@ -12,6 +12,7 @@ namespace FormulaOneRaceVisualizer.Models
         public int Round { get; set; }
 
         [JsonProperty("StandingsLists")]
-        public List<DriversStandings> StandingsLists { get; set; } = new List<DriversStandings>();
+        public List<StandingsLists> StandingsLists { get; set; } = new List<StandingsLists>();
+
     }
 }
